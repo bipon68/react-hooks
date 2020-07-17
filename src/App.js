@@ -1,12 +1,20 @@
 import React from 'react';
 import './App.css';
 
-function App() {
+export const App = () => {
   return (
     <div className="container">
-      Hello World
+      <h3>Please Sign My GuestBook</h3>
+      <div className="row">
+        <div className="col">
+          <h5>Sign In</h5>
+        </div>
+        <div className="col">
+          <h5>Guest</h5>
+        </div>
+      </div>
     </div>
   );
 }
 
-export default App;
+// export default App;
