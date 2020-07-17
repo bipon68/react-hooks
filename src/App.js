@@ -8,15 +8,26 @@ export const App = () => {
   const [guests, setGuest] = useState([])
 
   useEffect(() => {
-    setGuest([{
-      id: 1,
+    setGuest([
+      {
+        id: 1,
         name: 'John Jensen',
         street: '123 Main St.',
         city: 'Chicago',
         state: 'IL',
         zip: '12345',
         phone: '555-555-1234'
-    }])
+    },
+    {
+      id: 2,
+        name: 'Limon Jensen',
+        street: '123 Main St.',
+        city: 'Chicago',
+        state: 'IL',
+        zip: '12345',
+        phone: '555-555-1234'
+    }
+  ])
 
     // alert('useEffect fired')
   }, [])
@@ -24,6 +35,10 @@ export const App = () => {
   const addGuest = (guest) => {
     guest.id = guests.length + 1;
     setGuest([...guests, guest])
+}
+
+const deleteGuest = (id) => {
+  setGuest(guests.filter(guest => guest.id !=id))
 }
 
 
@@ -38,7 +53,7 @@ export const App = () => {
         </div>
         <div className="col">
           <h5>Guest</h5>
-          <GuestList guests={guests}/>
+          <GuestList deleteGuest={deleteGuest} guests={guests}/>
         </div>
       </div>
     </div>

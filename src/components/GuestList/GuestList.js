@@ -2,6 +2,7 @@ import React from 'react';
 import { Guest } from '../Guest/Guest';
 
 export const GuestList = (props)=> {
+    console.log('GuestLIst props : ', props)
     return (
         <div>
             <table className="table">
@@ -21,7 +22,7 @@ export const GuestList = (props)=> {
                                     </td>
                                     <td className="align-middle">
                                         <button type="button" className="btn btn-warning mr-2">Edit</button>
-                                        <button type="button" className="btn btn-danger">Delete</button>
+                                        <button type="button" className="btn btn-danger" onClick={() => props.deleteGuest(guest.id)}>Delete</button>
                                     </td>
                                 </tr>
                             ))
