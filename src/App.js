@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import { GuestList } from "./components/GuestList/GuestList";
 
 export const App = () => {
   return (
@@ -11,6 +12,7 @@ export const App = () => {
         </div>
         <div className="col">
           <h5>Guest</h5>
+          <GuestList />
         </div>
       </div>
     </div>
