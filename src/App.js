@@ -7,7 +7,7 @@ export const App = () => {
 const guestData = [
   {
     id: 1,
-      name: 'Derek Jensen',
+      name: 'John Jensen',
       street: '123 Main St.',
       city: 'Chicago',
       state: 'IL',
