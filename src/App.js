@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import { GuestList } from "./components/GuestList/GuestList";
+import { AddGuestForm } from './components/AddGuestForm/AddGuestForm';
 
 export const App = () => {
 
@@ -17,7 +18,7 @@ export const App = () => {
         phone: '555-555-1234'
     }])
 
-    alert('useEffect fired')
+    // alert('useEffect fired')
   }, [])
 
 
@@ -27,6 +28,7 @@ export const App = () => {
       <div className="row">
         <div className="col">
           <h5>Sign In</h5>
+          <AddGuestForm />
         </div>
         <div className="col">
           <h5>Guest</h5>
