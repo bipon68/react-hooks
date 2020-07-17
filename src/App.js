@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import { GuestList } from "./components/GuestList/GuestList";
 
 export const App = () => {
 
-const guestData = [
-  {
+  const [guests, setGuest] = useState([{
     id: 1,
       name: 'John Jensen',
       street: '123 Main St.',
@@ -13,8 +12,7 @@ const guestData = [
       state: 'IL',
       zip: '12345',
       phone: '555-555-1234'
-  }
-]
+  }])
 
 
   return (
@@ -26,7 +24,7 @@ const guestData = [
         </div>
         <div className="col">
           <h5>Guest</h5>
-          <GuestList guests={guestData}/>
+          <GuestList guests={guests}/>
         </div>
       </div>
     </div>
