@@ -21,6 +21,12 @@ export const App = () => {
     // alert('useEffect fired')
   }, [])
 
+  const addGuest = (guest) => {
+    guest.id = guests.length + 1;
+    setGuest([...guests, guest])
+}
+
+
 
   return (
     <div className="container">
@@ -28,7 +34,7 @@ export const App = () => {
       <div className="row">
         <div className="col">
           <h5>Sign In</h5>
-          <AddGuestForm />
+          <AddGuestForm addGuest={addGuest} />
         </div>
         <div className="col">
           <h5>Guest</h5>
