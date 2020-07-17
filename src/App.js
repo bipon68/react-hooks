@@ -1,18 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { GuestList } from "./components/GuestList/GuestList";
 
 export const App = () => {
 
-  const [guests, setGuest] = useState([{
-    id: 1,
-      name: 'John Jensen',
-      street: '123 Main St.',
-      city: 'Chicago',
-      state: 'IL',
-      zip: '12345',
-      phone: '555-555-1234'
-  }])
+  const [guests, setGuest] = useState([])
+
+  useEffect(() => {
+    setGuest([{
+      id: 1,
+        name: 'John Jensen',
+        street: '123 Main St.',
+        city: 'Chicago',
+        state: 'IL',
+        zip: '12345',
+        phone: '555-555-1234'
+    }])
+
+    alert('useEffect fired')
+  }, [])
 
 
   return (
