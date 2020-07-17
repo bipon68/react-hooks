@@ -8,6 +8,7 @@
 - `npm start` or `yarn start`
 
 ## Topics Cover
+- create react app
 
 ## Quick Start
 
@@ -19,7 +20,7 @@
 
 ## Note
 
-
+## Instructor: [Derek Jensen](https://tutsplus.com/authors/derek-jensen)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
