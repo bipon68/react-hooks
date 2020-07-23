@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-export const EditGuestForm = () => {
+export const EditGuestForm = (props) => {
     console.log('Edit guest form props: ', props)
 
     const [guest, setGuest] = useState(props.currentGuest)
