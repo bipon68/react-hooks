@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { GuestList } from '../GuestList/GuestList'
 
 export const AddGuestForm = (props) => {
-    console.log('add guest form props: ', props)
+    console.log('add guest form props: ', props);
+
+    const nameInputEl = useRef(null)
 
     const initialFormState = {
         id: null,
@@ -26,6 +28,14 @@ export const AddGuestForm = (props) => {
         props.addGuest(guest);
         setGuest(initialFormState)
     }
+
+    const setInitialFocus = () => {
+        nameInputEl.current.focus();
+    }
+
+    useEffect(() => {
+        setInitialFocus();
+    }, [])
     
 
     return (
@@ -33,7 +43,7 @@ export const AddGuestForm = (props) => {
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label htmlFor="name">Name</label>
-                    <input required type="text" name="name" value={guest.name} className="form-control" onChange={handleInputChanged}/>
+                    <input required ref={nameInputEl} type="text" name="name" value={guest.name} className="form-control" onChange={handleInputChanged}/>
                 </div>
                 <div className="form-group">
                     <label htmlFor="street">Street</label>

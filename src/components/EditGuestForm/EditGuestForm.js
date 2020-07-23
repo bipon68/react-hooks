@@ -47,7 +47,7 @@ export const EditGuestForm = (props) => {
                     <label htmlFor="phone">Phone</label>
                     <input required type="text" name="phone" value={guest.phone} className="form-control" onChange={handleInputChanged}/>
                 </div>
-                <button className="btn btn-primary" type="submit">Update Guest</button> 
+                <button className="btn btn-primary mr-2" type="submit">Update Guest</button> 
                 <button className="btn btn-secondary" onClick={() => props.setEditing(false)}>Cancel</button>           
             </form>
         </div>

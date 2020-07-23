@@ -7,7 +7,7 @@ import { EditGuestForm } from './components/EditGuestForm/EditGuestForm';
 export const App = () => {
 
   const initialFormState = {
-    id: 1,
+    id: null,
     name: '',
     street: '',
     city: '',
@@ -53,15 +53,15 @@ export const App = () => {
 const deleteGuest = (id) => {
   setGuest(guests.filter(guest => guest.id !=id))
 }
-const editGuest = (guest) => {
+const editGuest = guest => {
   setEditing(true);
 
-  setCurrentGuest({id: guest.id, name: guest.name, street: guest.street, state: guest.state, zip: guest.zip, phone: guest.phone})
+  setCurrentGuest({id: guest.id, name: guest.name, street: guest.street, city: guest.city, state: guest.state, zip: guest.zip, phone: guest.phone});
 }
-const updateGuest = (id, updateGuest) => {
+const updateGuest = (id, updatedGuest) => {
   setEditing(false);
 
-  setGuest(guests.map(guest =>(guest.id === id ? updateGuest: guest)))
+  setGuest(guests.map(guest => (guest.id === id ? updatedGuest : guest)));
 }
 
 
@@ -87,7 +87,7 @@ const updateGuest = (id, updateGuest) => {
         </div>
         <div className="col">
           <h5>Guest</h5>
-          <GuestList deleteGuest={deleteGuest} guests={guests}/>
+          <GuestList editGuest={editGuest} deleteGuest={deleteGuest} guests={guests}/>
         </div>
       </div>
     </div>
